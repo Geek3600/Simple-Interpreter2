@@ -1,0 +1,20 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Build output
+/build/
+
+# Documentation
+/docs/*
+!/docs/Doxyfile
+
+# clangd
+.cache/
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
