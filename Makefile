@@ -24,7 +24,7 @@ TEST_DIR = tests
 TEST_SRCS := $(sort $(shell find $(TEST_DIR) -name '*.cpp' 2> /dev/null))
 
 # Includes
-INCLUDE_DIR =
+INCLUDE_DIR = include
 INCLUDES = $(addprefix -I,$(SRC_DIR) $(INCLUDE_DIR))
 TEST_INCLUDES = -I$(TEST_DIR)
 
@@ -114,6 +114,7 @@ SRCS_WITHOUT_MAIN := $(filter-out $(MAIN_SRC),$(SRCS))
 SRC_OBJS_WITHOUT_MAIN := $(SRCS_WITHOUT_MAIN:%.cpp=$(OBJ_DIR)/%.o)
 TEST_OBJS := $(TEST_SRCS:%.cpp=$(OBJ_DIR)/%.o)
 ALL_OBJS := $(MAIN_OBJ) $(SRC_OBJS_WITHOUT_MAIN) $(TEST_OBJS)
+
 
 # Dependency files
 DEPS := $(ALL_OBJS:.o=.d)
