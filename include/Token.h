@@ -1,59 +1,19 @@
 
 #ifndef TOKEN_H
 #define TOKEN_H
+#include <string>
+#include "TokenType.h"
 
+class Token {
+public:
+    TokenType type = TokenType::UNKOWN;      // 存储token类型
+    std::string lexeme = "";  // 存储原始文本
+    std::string literal = ""; // 存储数字、字符串等字面量
+    int lineNum = 0;            // 存储行号
 
-// token类型枚举
-enum class TokenType {
-    // Single-character tokens.
-  LEFT_PAREN, 
-  RIGHT_PAREN, 
-  LEFT_BRACE, 
-  RIGHT_BRACE,
-  COMMA, 
-  DOT, 
-  MINUS, 
-  PLUS, 
-  SEMICOLON, 
-  SLASH, 
-  STAR,
-
-  // One or two character tokens.
-  BANG, 
-  BANG_EQUAL,
-  EQUAL, 
-  EQUAL_EQUAL,
-  GREATER, 
-  GREATER_EQUAL,
-  LESS, 
-  LESS_EQUAL,
-
-  // Literals.
-  IDENTIFIER, 
-  STRING, 
-  NUMBER,
-
-  // Keywords.
-  AND, 
-  CLASS, 
-  ELSE, 
-  FALSE, 
-  FUN, 
-  FOR, 
-  IF, 
-  NIL, 
-  OR,
-  PRINT, 
-  RETURN, 
-  SUPER, 
-  THIS, 
-  TRUE, 
-  VAR, 
-  WHILE,
-
-  EOFC
+    Token(TokenType tokenType, const std::string &lexeme, const std::string &literal, int lineNum) ;
+    ~Token();
+    // friend std::ostream &operator<<(std::ostream &os, const Token &token);
 };
-
-
 
 #endif

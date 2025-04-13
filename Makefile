@@ -3,7 +3,7 @@
 ################################################################################
 
 # Executable name
-EXEC = program
+EXEC = Lox
 
 # Test executable name
 TEST_EXEC = tests
