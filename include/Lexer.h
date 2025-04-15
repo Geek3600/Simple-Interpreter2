@@ -6,16 +6,21 @@
 
 class Lexer {
 public: 
-    std::string text;
-    std::vector<Token> tokens;
-    int start = 0;
-    int current = 0;
+    std::string text; // 接收的文本
+    std::vector<Token> tokens; // tokens序列
+    int start = 0;    // 一个token的第一个字符的偏移量
+    int current = 0;  // 当前的字符的偏移量 
+    int lineNum = 1;
     Lexer(const std::string &str);
     ~Lexer();
 
     std::vector<Token> scanTokens();
     void scanToken();
     bool isAtEnd();
+    void addToken(TokenType type);
+    void addToken(TokenType type, std::string literal);
+    char getNextChar();
+
 };
 
 
