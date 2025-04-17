@@ -108,7 +108,7 @@ OBJ_DIR := $(BUILD_DIR)/obj
 BIN_DIR := $(BUILD_DIR)/bin
 
 # Object files
-MAIN_SRC = $(SRC_DIR)/main.cpp
+MAIN_SRC = $(SRC_DIR)/Parser.cpp
 MAIN_OBJ := $(MAIN_SRC:%.cpp=$(OBJ_DIR)/%.o)
 SRCS_WITHOUT_MAIN := $(filter-out $(MAIN_SRC),$(SRCS))
 SRC_OBJS_WITHOUT_MAIN := $(SRCS_WITHOUT_MAIN:%.cpp=$(OBJ_DIR)/%.o)
